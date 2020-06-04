@@ -23,7 +23,7 @@ if (api):
 else:
     print("Failed")
 
-#firebas= firebase.FirebaseApplication("https://try1-c613f.firebaseio.com/", None)
+#firebase= firebase.FirebaseApplication("https://try1-c613f.firebaseio.com/", None)
 print("Logged in fire base")
 
 connection = sqlite3.connect('realtime14.db')
