@@ -12,4 +12,4 @@
 
 6. A proper documentation of the project would be uploaded once the project is completed.
 
-7. The project was done together with Vishnu Krishnan(Vishnukk33)
+7. The project was done together with Vishnu Krishnan (Vishnukk33).
