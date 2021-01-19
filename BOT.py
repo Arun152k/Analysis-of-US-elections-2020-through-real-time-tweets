@@ -37,8 +37,8 @@ df.to_csv(newcsvname)
 data=pd.read_csv(newcsvname)
 data.drop(data.columns[data.columns.str.contains('unnamed',case = False)],axis = 1, inplace = True)
 data['user']=" "
-data['probability']=0
 data['bot']=" "
+data['probability']=0
 data.to_csv(newcsvname,index=False)
 
 for i in range (0,len(user_name_list)):
