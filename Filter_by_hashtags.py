@@ -2,18 +2,18 @@ from ssl import SSLError
 import re
 import time
 from requests.exceptions import Timeout, ConnectionError
-from urllib3.exceptions import ReadTimeoutError
+from urllib3.exceptions import ReadTimeoutError, ProtocolError
 import json
 import tweepy
-from urllib3.exceptions import ProtocolError
 import sqlite3
 import logging
-global api
 from firebase import firebase
-consumer_key="5tlYTpR1tmPTcgMBC0j"
-consumer_secret="wVEINjsJ2LVj6lmxxWPuo6KgALIMkUhlTu5lH4"
-access_token="100254907977T9YfrjgVJLe1gZy1n8O4mnArToO"
-access_token_secret="gNNGpQZYaguflQX5QXFSCER4mKyp5IVdOMcVKvE"
+global api
+
+consumer_key="Insert_consumer_key_here"
+consumer_secret="Insert_consumer_secret_here"
+access_token="Insert_access_token_here"
+access_token_secret="Insert_access_token_secret_here"
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
 api = tweepy.API(auth)
@@ -21,10 +21,11 @@ if (api):
     print("Login Success")
 else:
     print("Failed")
-firebase= firebase.FirebaseApplication("https://try.firebaseapp.com/", None)
+firebase= firebase.FirebaseApplication("Insert_your_firebase_table_URL_here", None)
 if(firebase):
   print("Logged in fire base")
 
+#Creating a table in sqlite database 
 connection = sqlite3.connect('realtime1.db')
 c = connection.cursor()
 c.execute('''CREATE TABLE twitter1
@@ -53,6 +54,7 @@ class Tweet():
         self.verified=verified
         
     def insertTweet(self):
+        # The data is uploaded/appended to firebase table as a dictionary 
         tweetDataForFirebase = {
             'text': self.text,
             'user': self.user,
@@ -61,21 +63,22 @@ class Tweet():
             'location': self.location,
             'description': self.description,
             'verified': self.verified,
-            
         }
-        
+        #inserting into firebase table
         result = firebase.post('/try/table2',tweetDataForFirebase)
+        #inserting into sqlite table 
         c.execute("INSERT INTO twitter1(tweetText, user, followers, date, location,description,verified) VALUES (?,?, ?, ?, ?, ?, ?)",
             (self.text,self.user, self.followers, self.date, self.location,self.description,self.verified)) 
         connection.commit()  
         print("Inserted \n")
-        
+ 
+#Streaming
 class TweetStreamListener(tweepy.StreamListener):
     def on_data(self,data):
-        
+        # Dumping JSON data
         tweet=json.loads(data)
         try:
-                                
+                # Filtering out retweets               
                 if  not tweet["text"].startswith('RT'):
                     if tweet.get("extended_tweet"):
                         text = str(tweet['extended_tweet']["full_text"])
