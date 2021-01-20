@@ -1,15 +1,18 @@
+from ssl import SSLError
+import re
 import time
 from requests.exceptions import Timeout, ConnectionError
-from urllib3.exceptions import ReadTimeoutError
+from urllib3.exceptions import ReadTimeoutError, ProtocolError
 import json
 import tweepy
+import sqlite3
 import logging
 global api
-#from firebase import firebase
-consumer_key="5tlYTpVNtcxNR1tmPTcgMBC0j"
-consumer_secret="wVEX9My3v6340sHINjsJ2LVj6lmxxWPuo6KgALIMkUhlTu5lH4"
-access_token="1002549079774093313-fCET9YfrjgVJLe1gZy1n8O4mnArToO"
-access_token_secret="gNNGpKh7GBsQZYaguflQX5QXFSCER4mKyp5IVdOMcVKvE"
+
+consumer_key="Insert_consumer_key_here"
+consumer_secret="Insert_consumer_secret_here"
+access_token="Insert_access_token_here"
+access_token_secret="Insert_access_token_secret_here"
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
 api = tweepy.API(auth)
@@ -17,6 +20,7 @@ if (api):
     print("Login Success")
 else:
     print("Failed")
+
 class TweetStreamListener(tweepy.StreamListener):
     def on_data(self,data):
         
@@ -34,13 +38,6 @@ class TweetStreamListener(tweepy.StreamListener):
                         else:
                             text= str(tweet["text"])
                         print(text)
-                        s=[]
-                        s.append(text)
-                        
-                        user_profile=api.get_user(tweet['user']['screen_name'])
-                        username=tweet['user']['screen_name']
-                        
-                        s.append(username)
             
                 return True
                 
@@ -55,7 +52,7 @@ if __name__ == '__main__':
     # Run the stream!
     l = TweetStreamListener()
     stream = tweepy.Stream(auth, l,tweet_mode='extended')
-    stream.filter(follow=['1204812731620057088']) 
+    stream.filter(follow=['insert_twitter_id_here']) 
     # Filtering
     while not stream.running:
         try:
