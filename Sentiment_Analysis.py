@@ -1,4 +1,4 @@
-# To perform Sentiment analysis of the tweets using VADER sentiment analysis
+# To perform Sentiment analysis of the tweets using VADER sentiment analysis.
 
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 import pandas as pd
