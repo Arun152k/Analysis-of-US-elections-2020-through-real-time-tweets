@@ -25,7 +25,7 @@ firebase= firebase.FirebaseApplication("Insert_your_firebase_table_URL_here", No
 if(firebase):
   print("Logged in fire base")
 
-#Creating a table in sqlite database 
+#Creating a table in sqlite database. 
 connection = sqlite3.connect('realtime1.db')
 c = connection.cursor()
 c.execute('''CREATE TABLE twitter1
