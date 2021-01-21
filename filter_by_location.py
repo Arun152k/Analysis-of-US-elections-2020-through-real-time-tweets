@@ -24,9 +24,10 @@ if (api):
 else:
     print("Failed")
 
-#firebase= firebase.FirebaseApplication("https://try1-c613f.firebaseio.com/", None)
+firebase_= firebase.FirebaseApplication("https://try1-c613f.firebaseio.com/", None)
 print("Logged in fire base")
 
+#Creating a table in sqlite database.
 connection = sqlite3.connect('realtime14.db')
 c = connection.cursor()
 c.execute('''CREATE TABLE twittr206
@@ -46,7 +47,6 @@ c = connection.cursor()
 class Tweet():
     def __init__(self, text,user,date,location,state,latitude,longitude):
         self.text = text
-        
         self.user=user
         self.date = date
         self.location = location
@@ -55,6 +55,7 @@ class Tweet():
         self.longitude=longitude
     
     def insertTweet(self):
+        # The data is uploaded/appended to firebase table as a dictionary 
         tweetDataForFirebase = {
             'text': self.text,
            
@@ -65,29 +66,31 @@ class Tweet():
             'latitude': self.latitude,
             'longitude': self.longitude
         }
-        #result = firebas.post('/try1-c613f/table1',tweetDataForFirebase)
+        #inserting into firebase table
+        result = firebase_.post('/try1-c613f/table1',tweetDataForFirebase)
+        #inserting into sqlite table 
         self.text=" ".join( self.text.splitlines()) 
         c.execute("INSERT INTO twittr206(tweetText,user,date, location,state,latitude,longitude) VALUES (?, ?, ?, ?, ?, ?, ?)",
             (self.text,self.user, self.date, self.location,self.state,self.latitude,self.longitude)) 
         connection.commit()
-
         print("Inserted \n")
-        
+#Streaming       
 class TweetStreamListener(tweepy.StreamListener):
     def on_data(self,data):
+        # Dumping JSON data
         tweet=json.loads(data)
         try:
                 state="XXXX"
                 latitude=99999.99
                 longitude=9999.99
+                # Filtering out retweets, and getting the tweet text.
+                # Extended tweet is used to get tweet texts which are between 140 to 280 characters.
                 if  not tweet["text"].startswith('RT'):
                     if tweet.get("extended_tweet"):
                         text = str(tweet['extended_tweet']["full_text"])
                     else:
                         text= str(tweet["text"])
-                    
-                    
-            
+                    # Filtering out emojis and other special characters.    
                     emoji_pattern = re.compile("["u"\U0001F600-\U0001F64F"u"\U0001F300-\U0001F5FF" u"\U0001F680-\U0001F6FF"  u"\U0001F1E0-\U0001F1FF"  u"\U00002702-\U000027B0"u"\U000024C2-\U0001F251""]+", flags=re.UNICODE)
                     text = re.sub(r':', '', text)
                     text = re.sub(r'‚Ä¶', '', text)
@@ -119,8 +122,10 @@ class TweetStreamListener(tweepy.StreamListener):
             return True
 if __name__ == '__main__':
     print("start \n")
+    #Start listening
     l = TweetStreamListener()
     stream = tweepy.Stream(auth, l,tweet_mode='extended')
+     # logging is used for keeping track of the errors and warning that has occured
     while True:
         try:
             
@@ -130,9 +135,9 @@ if __name__ == '__main__':
             time.sleep(200)
             continue
         except(Timeout, SSLError, ReadTimeoutError, ConnectionError) as e:
-            logging.warning("Network error occurred. Keep calm and carry on.", str(e))
+            logging.warning("Network error occurred.", str(e))
         except Exception as e:
-            logging.error("Unexpected error!", e)
+            logging.error("Unexpected error.", e)
         finally:
-            logging.info("Stream has crashed. System will restart twitter stream!")
+            logging.info("Stream has crashed.")
     logging.critical("Somehow zombie has escaped...!")
