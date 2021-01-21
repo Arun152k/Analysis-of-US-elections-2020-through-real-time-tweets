@@ -1,7 +1,8 @@
 import pandas as pd
 import re
+
 pd.options.mode.chained_assignment = None 
-for name in range(1,2):
+for name in range(1,6):
     print("Name ",name)
     csvname="twittr"+name+".csv"
     data=pd.read_csv(csvname)
