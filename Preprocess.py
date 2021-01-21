@@ -15,7 +15,7 @@ corpus=[]
 # loop to clean the tweets and to remove stopwords and perform stemming.
 for i in range (0,rows):
     oldtext=data['Tweet'][i] 
-    newtext=' '.join(re.sub("(@[A-Za-z0-9]+)|(#[A-Za-z0-9]+)|([^0-9A-Za-z \t])|(\w+:\/\/\S+)"," ",oldtext).split()) # removes hashtag, https links, usernames and any other alphanumeric characters.
+    newtext=' '.join(re.sub("(@[A-Za-z0-9]+)|(#[A-Za-z0-9]+)|([^0-9A-Za-z \t])|(\w+:\/\/\S+)"," ",oldtext).split()) # removes hashtags, https links, usernames and any other alpha-numeric characters.
     newtext= re.sub('[^a-zA-Z]'," ",newtext) #removes all other characters other than alphabets
     newtext=newtext.lower()
     newtext=newtext.split()
