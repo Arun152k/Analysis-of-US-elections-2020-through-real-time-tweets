@@ -22,7 +22,7 @@ for i in range (0,rows):
     ps=PorterStemmer()
     newtext= [ps.stem(word) for word in newtext if word not in set(stopwords.words('english'))]
     newtext=' '.join(newtext)
-    print(newtext)
+    #print(newtext)
     data['Tweet'][i]=newtext
     
 # Saving changes to the csv file
