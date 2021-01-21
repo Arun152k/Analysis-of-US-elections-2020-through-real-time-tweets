@@ -12,20 +12,19 @@ import logging
 global api
 from firebase import firebase 
 
-consumer_key="5tlYTpVNtcxNR1tmPTcgMBC0j"
-consumer_secret="wVEX9My3v6340sHINjsJ2LVj6lmxxWPuo6KgALIMkUhlTu5lH4"
-access_token="1002549079774093313-fCET9YfrjgVJLe1gZy1n8O4mnArToO"
-access_token_secret="gNNGpKh7GBsQZYaguflQX5QXFSCER4mKyp5IVdOMcVKvE"
+consumer_key="Insert_consumer_key_here"
+consumer_secret="Insert_consumer_secret_here"
+access_token="Insert_access_token_here"
+access_token_secret="Insert_access_token_secret_here"
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
-api = tweepy.API(auth, wait_on_rate_limit=True, wait_on_rate_limit_notify=True, retry_count=10, retry_delay=5, retry_errors=5)
+api = tweepy.API(auth, wait_on_rate_limit=True, wait_on_rate_limit_notify=True)
 if (api):
     print("Login Success")
 else:
     print("Failed")
 
-firebase_= firebase.FirebaseApplication("https://try1-c613f.firebaseio.com/", None)
-print("Logged in fire base")
+firebase_= firebase.FirebaseApplication("Insert_your_firebase_table_URL_here", None)
 
 #Creating a table in sqlite database.
 connection = sqlite3.connect('realtime14.db')
@@ -58,7 +57,6 @@ class Tweet():
         # The data is uploaded/appended to firebase table as a dictionary 
         tweetDataForFirebase = {
             'text': self.text,
-           
             'user': self.user,
             'date': self.date,
             'location': self.location,
@@ -67,19 +65,21 @@ class Tweet():
             'longitude': self.longitude
         }
         #inserting into firebase table
-        result = firebase_.post('/try1-c613f/table1',tweetDataForFirebase)
+        result = firebase_.post('Insert_your_firebase_table_URL_here',tweetDataForFirebase)
         #inserting into sqlite table 
         self.text=" ".join( self.text.splitlines()) 
         c.execute("INSERT INTO twittr206(tweetText,user,date, location,state,latitude,longitude) VALUES (?, ?, ?, ?, ?, ?, ?)",
             (self.text,self.user, self.date, self.location,self.state,self.latitude,self.longitude)) 
         connection.commit()
         print("Inserted \n")
+        
 #Streaming       
 class TweetStreamListener(tweepy.StreamListener):
     def on_data(self,data):
         # Dumping JSON data
         tweet=json.loads(data)
         try:
+                # Initializing Default Values.
                 state="XXXX"
                 latitude=99999.99
                 longitude=9999.99
@@ -100,26 +100,21 @@ class TweetStreamListener(tweepy.StreamListener):
                     if(tweet['place'] ):
                         if(str(tweet['place']['full_name'].split(', ')[1])):
                             s=str(tweet['place']['full_name'].split(', ')[1])
+                            # 'states' list consists of abbreviation of all US states. 
                             states = ["AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DC", "DE", "FL", "GA", "HI", "ID","IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", "MA", "MI","NV", "NH", "NJ", "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY", "NONE"]
                             if(s in states):
-                                state=s
-                              
-                                
+                                state=s        
                     if(tweet['coordinates']):
                         latitude=tweet['coordinates']['coordinates'][1]
                         longitude=tweet['coordinates']['coordinates'][0]
-                          
-                    
-                        
                     tweet_data = Tweet(text,tweet['user']['screen_name'],tweet['created_at'],tweet['user']['location'],state,latitude,longitude)
                     tweet_data.insertTweet()
-            
                 return True
                 
         except Exception as e:
             print(e)
-            print("sdf")
             return True
+        
 if __name__ == '__main__':
     print("start \n")
     #Start listening
@@ -128,7 +123,6 @@ if __name__ == '__main__':
      # logging is used for keeping track of the errors and warning that has occured
     while True:
         try:
-            
             logging.info("Started listening to twitter stream...")
             stream.filter(locations=[-180,-90,180,90],languages=["en"])            
         except(ProtocolError, AttributeError):
@@ -140,4 +134,4 @@ if __name__ == '__main__':
             logging.error("Unexpected error.", e)
         finally:
             logging.info("Stream has crashed.")
-    logging.critical("Somehow zombie has escaped...!")
+    logging.critical("Zombie has escaped...!")
