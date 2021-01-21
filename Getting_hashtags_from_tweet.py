@@ -10,7 +10,7 @@ for name in range(1,6):
     rows=len(data)
     for i in range (0,rows):
             #print(i)
-            hashtags=[]
+            hashtags_final=[]
             hashperrow=[]
             s=data['tweetText'][i]
             # removing URLs and usernames from the tweet text.
@@ -33,11 +33,10 @@ for name in range(1,6):
                             hash_tag=hashtag.split('#')
                             hash_tag.remove('')
                             if hash_tag is not None:
-                                hashtags.extend(hash_tag)
-                        hashtags_set=set(hashtags)
-                        hashtags=list(hashtags_set)
-            data['hashtags'][i]=hashtags
-            #print(hashtags)    
+                                hashtags_final.extend(hash_tag)
+                        hashtags_final=list(set(hashtags_final))
+            data['hashtags'][i]=hashtags_final
+            #print(hashtags_final)    
     data.to_csv(csvname,index=False)
 
 
