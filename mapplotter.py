@@ -8,7 +8,7 @@ for name in range(1,6):
     data=pandas.read_csv('repub'+str(name)+'.csv')
     latitude=data.latitude.tolist()
     longitude=data.longitude.tolist()
-    # Non Geo-tagged tweets were given a value of (99999.99,99999.99). We are removing them.
+    # Non Geo-tagged tweets were given a value of (99999.99,99999.99). We are removing them from the list.
     for i in range(0,latitude.count(99999.99)):
         latitude.remove(99999.99)
     for i in range(0,longitude.count(99999.99)):
