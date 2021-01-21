@@ -1,11 +1,10 @@
-import pandas as pd
-pd.options.mode.chained_assignment = None
+import re
 import nltk
+import pandas as pd
 import numpy as np
 from sklearn.feature_extraction.text import TfidfVectorizer
 from nltk.corpus import stopwords
 from nltk.stem.porter import PorterStemmer
-import re
 from sklearn.metrics import accuracy_score 
 from sklearn.datasets import load_iris
 from sklearn.model_selection import train_test_split
@@ -14,7 +13,9 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.ensemble import RandomForestClassifier
 from xgboost import XGBClassifier
 from vecstack import stacking
-csvname="book3.csv"
+
+pd.options.mode.chained_assignment = None
+csvname="book3.csv" # Insert your csv name here.
 data=pd.read_csv(csvname)
 rows=len(data)
 
