@@ -65,7 +65,7 @@ class Tweet():
             'verified': self.verified,
         }
         #inserting into firebase table
-        result = firebase.post('/try/table2',tweetDataForFirebase)
+        result = firebase.post('Insert_your_firebase_table_link_here',tweetDataForFirebase)
         #inserting into sqlite table 
         c.execute("INSERT INTO twitter1(tweetText, user, followers, date, location,description,verified) VALUES (?,?, ?, ?, ?, ?, ?)",
             (self.text,self.user, self.followers, self.date, self.location,self.description,self.verified)) 
@@ -120,6 +120,6 @@ if __name__ == '__main__':
         except Exception as e:
             logging.error("Unexpected error.", e)
         finally:
-            logging.info("Stream has crashed. System will restart twitter stream!")
+            logging.info("Stream has crashed.")
     logging.critical("Somehow zombie has escaped...!")
 
