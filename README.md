@@ -68,5 +68,5 @@ We have incorporated the following in our project:
 * "ML.csv" is preprocessed so as to make it suitable to feed into Machine Learning Algorithms. The preprocessing is done by "Preprocess.py".
 * The processed dataset, is used by "ML_prediction.py" to predict the political orientation of the tweets. 
 * "ML_prediction.py" uses standard Machine Learning Algorithms to predict the political orientation of the tweets as well as attempts to use a Stack Based Voting Algorithm.
-* ".pynb" file contains the entire sequence in a single file.
+* ".pynb" file contains the entire sequence in a single file. The accuracy obtained through each algorithm is mentioned in this file. 
 
