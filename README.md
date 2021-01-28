@@ -56,7 +56,7 @@ We have incorporated the following in our project:
 
 ### Creating Datasets:
 * The collected tweets stored in the Database was converted into .csv files so as to facilitate easier data manipulation and processing through python pandas library.
-* There are 14 .csv files in total, which include democ1.csv, democ2.csv, democ3.csv, democ4.csv, democ5v, repub1.csv, repub2.csv, repub3.csv, repub4v, repub5.csv and sentiday1.csv, sentiday2.csv, sentiday3.csv, sentiday4.csv.
+* There are 14 .csv files in total, which include democ1.csv, democ2.csv, democ3.csv, democ4.csv, democ5.csv, repub1.csv, repub2.csv, repub3.csv, repub4.csv, repub5.csv and sentiday1.csv, sentiday2.csv, sentiday3.csv, sentiday4.csv.
 * "Getting_hashtags_from_tweet.py" was run on these above mentioned datasets in order to extract the additional datasets tagged by the users in their tweets.
 * The Data visualization and Analysis, the Machine Learning based predictions were all performed using these .csv files.
 
@@ -68,4 +68,5 @@ We have incorporated the following in our project:
 * "ML.csv" is preprocessed so as to make it suitable to feed into Machine Learning Algorithms. The preprocessing is done by "Preprocess.py".
 * The processed dataset, is used by "ML_prediction.py" to predict the political orientation of the tweets. 
 * "ML_prediction.py" uses standard Machine Learning Algorithms to predict the political orientation of the tweets as well as attempts to use a Stack Based Voting Algorithm.
+* ".pynb" file contains the entire sequence in a single file.
 
