@@ -61,5 +61,11 @@ We have incorporated the following in our project:
 * The Data visualization and Analysis, the Machine Learning based predictions were all performed using these .csv files.
 
 ## Machine Learning:
-* 
+* The goal was to predict the political orientation of the tweets using Machine Learning Algorithms.
+* The dataset "ML.csv" was created by running "Creating_ML_File.py" on the democ(1..5).csv and repub(1,5).csv.
+* "ML.csv" contains 30000 rows in total, consisting of 3000 tweets selected randomly from each of the 10 .csv files i.e democ(1..5).csv and repub(1..5).csv.
+* "ML.csv" contains the the tweets and the political orientation of each tweet.
+* "ML.csv" is preprocessed so as to make it suitable to feed into Machine Learning Algorithms. The preprocessing is done by "Preprocess.py".
+* The processed dataset, is used by "ML_prediction.py" to predict the political orientation of the tweets. 
+* "ML_prediction.py" uses standard Machine Learning Algorithms to predict the political orientation of the tweets as well as attempts to use a Stack Based Voting Algorithm.
 
