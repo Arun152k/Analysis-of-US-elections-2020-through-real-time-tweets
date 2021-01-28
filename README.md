@@ -77,3 +77,100 @@ We have incorporated the following in our project:
 ### Note:
 * The collected tweets/data is publicly available and have been tweeted by public twitter handles. These tweets/data were collected and uploaded only for strict academic purposes.   
 
+
+## Data Visualization and Analysis:
+The entire visualization and analysis can be found in the ".ipynb" named 'Data_Visualization.ipynb'
+### Initialization and Preprocessing
+Files and variables required for visualization were imported and declared in this section.
+Reading of the input data as well as the preprocessing( segregation, ordering,etc) for it were carried out here.
+
+### Visualization
+
+
+<ol type="1">
+  <li><h4>Average number of tweets tweeted per user in a day</h4></li>
+  
+   <img src="https://github.com/Arun152k/Analysis-of-US-Elections-2020/blob/master/Graphs/Average.PNG" width="550" height="400"/>
+  
+  
+  The above results indicate that the average number of tweets per user is slightly higher among republic candidates than democratic candidates and the overall average comes  out to be 1.59 tweets per day.
+  <li><h4>Total no. of tweets tweeted per day</h4></li>
+    <img src="https://github.com/Arun152k/Analysis-of-US-Elections-2020/blob/master/Graphs/BarGraph_Demo1.png" width="450" height="400"/>          
+  
+   <img src="https://github.com/Arun152k/Analysis-of-US-Elections-2020/blob/master/Graphs/BarGraph_Rep1.png" width="450" height="400"/>
+  
+  From the Above graphs we can tell that the total number of republican and democratic supporting tweets are almost comparable during the 5 days that we collected them. 
+  
+  
+  <li><h4>No. of unique users tweeted per day</h4></li>
+    <img src="https://github.com/Arun152k/Analysis-of-US-Elections-2020/blob/master/Graphs/BarGraph_Demo2.png" width="450" height="400"/>
+    <img src="https://github.com/Arun152k/Analysis-of-US-Elections-2020/blob/master/Graphs/BarGraph_Rep2.png" width="450" height="400"/>
+    
+  From the Above graphs we can tell that the total number of UNIQUE republican and democratic users are almost comparable during the 5 days that we collected them.
+  
+  
+  <li><h4>Follower distribution</h4></li>
+    <img src="https://github.com/Arun152k/Analysis-of-US-Elections-2020/blob/master/Graphs/BarGraph_Followers.png" width="600" height="400"  />
+  
+  
+  The Graph shows how many followers the republic and democratic users have by segregating them into classes. From the above, we can tell that on average republican accounts have more followers than democratic users since the numbers from the republic users are higher in every class. Ofcourse this is limited to only the users from whom we collected the tweets.
+  
+  
+  <li><h4>Tweet count vs Originating State</h4></li>
+    <img src="https://github.com/Arun152k/Analysis-of-US-Elections-2020/blob/master/Graphs/BarGraph_DemoTweetcount.png" width="700" height="500"  />
+   
+   <img src="https://github.com/Arun152k/Analysis-of-US-Elections-2020/blob/master/Graphs/Pie_DemoState.png" width="700" height="600"  />
+    
+   The above Graphs indicate that California, Florida, New York, Texas and Illinois are the states from which majority of the Democratic Party tweets originate from in descending order. 
+    
+   <img src="https://github.com/Arun152k/Analysis-of-US-Elections-2020/blob/master/Graphs/BarGraph_RepTweetcount.png" width="700" height="500"  /> 
+    
+   <img src="https://github.com/Arun152k/Analysis-of-US-Elections-2020/blob/master/Graphs/Pie_RepState.png" width="700" height="600"  />
+    
+    
+   The above Graphs indicate that Texas, California, Florida, New York, and Illinois are the states from which majority of the Republic Party tweets originate from in descending order. 
+  <li><h4>Removed vs verified vs non-verfied</h4></li>
+  While checking the number of verified accounts we came across something interesting. Many of the accounts from which we had collected tweets earlier had been removed. This is evidence that many accounts which tweeted about the elections were actually fake bots that were designed to spread propaganda to potentially skew the election towards one of the candidates.                                                                                                                                                         
+  
+   <img src="https://github.com/Arun152k/Analysis-of-US-Elections-2020/blob/master/Graphs/Pie_Verified.png" width="400" height="400"  />
+   
+ These accounts according to some media could be used by different countries to sow discord during the election. From all the tweets we collected,  we found that over half of the twitter accounts that tweeted during these 5 days were in fact removed by the twitter team as they were suspected for being bots. This is an alarmingly large amount of accounts which was used to spread propaganda and fake opinions that could very well have impacted the voters and maybe even tipped the scale towards a certain party. 
+  Hopefully the twitter team continuous to remove such malicious fake accounts to prevent any bias towards or against a party due to the propaganda spread.
+  
+</ol>  
+
+### Botometer API
+In order to check if the top most tweeted user's were bots or not, we used an API called Botometer. A
+
+
+  <img src="https://github.com/Arun152k/Analysis-of-US-Elections-2020/blob/master/Graphs/TopDemoTweetsSS.PNG" width="600" height="400"  />
+  
+  
+ <img src="https://github.com/Arun152k/Analysis-of-US-Elections-2020/blob/master/Graphs/TopRepuTweetsSS.PNG" width="600" height="400"  />
+
+### Top Hashtags
+
+  <img src="https://github.com/Arun152k/Analysis-of-US-Elections-2020/blob/master/Graphs/TopDemoHashSS.PNG" width="500" height="400"  />
+  
+ <img src="https://github.com/Arun152k/Analysis-of-US-Elections-2020/blob/master/Graphs/TopRepuHashSS.PNG" width="500" height="400"  />
+
+
+### Word Clouds
+#### List of Most popular hastags as a word cloud  
+
+
+<img src="https://github.com/Arun152k/Analysis-of-US-Elections-2020/blob/master/Graphs/wordcloud_dem_hash.jpg" width="500" height="400"  />
+
+<img src="https://github.com/Arun152k/Analysis-of-US-Elections-2020/blob/master/Graphs/wordcloud_rep_hash.jpg" width="500" height="400"  />
+
+
+#### Most popular words used in tweets as a world cloud
+
+
+<img src="https://github.com/Arun152k/Analysis-of-US-Elections-2020/blob/master/Graphs/wordcloud_dem_tweet.jpg" width="500" height="400"  />
+
+<img src="https://github.com/Arun152k/Analysis-of-US-Elections-2020/blob/master/Graphs/wordcloud_rep_tweet.jpg" width="500" height="400"  />
+
+### Sentiment Analysis
+
+<img src="https://github.com/Arun152k/Analysis-of-US-Elections-2020/blob/master/Graphs/Pie_Sentiment.png" width="500" height="400"  />
