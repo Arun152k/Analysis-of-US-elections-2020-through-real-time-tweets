@@ -1,16 +1,15 @@
+# This program filters tweets based on the coordinates mentioned.
 from ssl import SSLError
-import string
 import re
 import time
 from requests.exceptions import Timeout, ConnectionError
-from urllib3.exceptions import ReadTimeoutError
+from urllib3.exceptions import ReadTimeoutError, ProtocolError
 import json
 import tweepy
-from urllib3.exceptions import ProtocolError
 import sqlite3
 import logging
+from firebase import firebase
 global api
-from firebase import firebase 
 
 consumer_key="Insert_consumer_key_here"
 consumer_secret="Insert_consumer_secret_here"
@@ -18,71 +17,68 @@ access_token="Insert_access_token_here"
 access_token_secret="Insert_access_token_secret_here"
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
-api = tweepy.API(auth, wait_on_rate_limit=True, wait_on_rate_limit_notify=True)
+api = tweepy.API(auth)
 if (api):
     print("Login Success")
 else:
     print("Failed")
+firebase= firebase.FirebaseApplication("Insert_your_firebase_table_URL_here", None)
+if(firebase):
+  print("Logged in fire base")
 
-firebase_= firebase.FirebaseApplication("Insert_your_firebase_table_URL_here", None)
-
-#Creating a table in sqlite database.
-connection = sqlite3.connect('realtime14.db')
+#Creating a table in sqlite database. 
+connection = sqlite3.connect('realtime1.db')
 c = connection.cursor()
-c.execute('''CREATE TABLE twittr206
+c.execute('''CREATE TABLE twitter1
     (tweetText text,
     hashtags text,
     user text,
+    followers integer,
     date text,
     location text,
-    state text,
-    latitude float,
-    longitude float)''')
+    description text,
+    verified text
+     )''')
 connection.commit()
 connection.close()
-connection = sqlite3.connect("realtime14.db")
+connection = sqlite3.connect("realtime1db")
 c = connection.cursor()
 
 class Tweet():
-    def __init__(self, text,user,date,location,state,latitude,longitude):
+    def __init__(self, text,user,followers,date,location,description,verified):
         self.text = text
         self.user=user
+        self.followers = followers
         self.date = date
         self.location = location
-        self.state=state
-        self.latitude=latitude
-        self.longitude=longitude
-    
+        self.description=description
+        self.verified=verified
+        
     def insertTweet(self):
         # The data is uploaded/appended to firebase table as a dictionary 
         tweetDataForFirebase = {
             'text': self.text,
             'user': self.user,
+            'followers': self.followers,
             'date': self.date,
             'location': self.location,
-            'state': self.state,
-            'latitude': self.latitude,
-            'longitude': self.longitude
+            'description': self.description,
+            'verified': self.verified,
         }
         #inserting into firebase table
-        result = firebase_.post('Insert_your_firebase_table_URL_here',tweetDataForFirebase)
+        result = firebase.post('Insert_your_firebase_table_link_here',tweetDataForFirebase)
         #inserting into sqlite table 
-        self.text=" ".join( self.text.splitlines()) 
-        c.execute("INSERT INTO twittr206(tweetText,user,date, location,state,latitude,longitude) VALUES (?, ?, ?, ?, ?, ?, ?)",
-            (self.text,self.user, self.date, self.location,self.state,self.latitude,self.longitude)) 
-        connection.commit()
+        c.execute("INSERT INTO twitter1(tweetText, user, followers, date, location,description,verified) VALUES (?,?, ?, ?, ?, ?, ?)",
+            (self.text,self.user, self.followers, self.date, self.location,self.description,self.verified)) 
+        connection.commit()  
         print("Inserted \n")
-        
-#Streaming       
+ 
+#Streaming
 class TweetStreamListener(tweepy.StreamListener):
     def on_data(self,data):
         # Dumping JSON data
         tweet=json.loads(data)
         try:
-                # Initializing Default Values.
-                state="XXXX"
-                latitude=99999.99
-                longitude=9999.99
                 # Filtering out retweets, and getting the tweet text.
                 # Extended tweet is used to get tweet texts which are between 140 to 280 characters.
                 if  not tweet["text"].startswith('RT'):
@@ -95,20 +91,12 @@ class TweetStreamListener(tweepy.StreamListener):
                     text = re.sub(r':', '', text)
                     text = re.sub(r'‚Ä¶', '', text)
                     text = re.sub(r'[^\x00-\x7F]+',' ', text)
-        
+                    text=" ".join( text.splitlines())
+                    
                     user_profile=api.get_user(tweet['user']['screen_name'])
-                    if(tweet['place'] ):
-                        if(str(tweet['place']['full_name'].split(', ')[1])):
-                            s=str(tweet['place']['full_name'].split(', ')[1])
-                            # 'states' list consists of abbreviation of all US states. 
-                            states = ["AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DC", "DE", "FL", "GA", "HI", "ID","IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", "MA", "MI","NV", "NH", "NJ", "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY", "NONE"]
-                            if(s in states):
-                                state=s        
-                    if(tweet['coordinates']):
-                        latitude=tweet['coordinates']['coordinates'][1]
-                        longitude=tweet['coordinates']['coordinates'][0]
-                    tweet_data = Tweet(text,tweet['user']['screen_name'],tweet['created_at'],tweet['user']['location'],state,latitude,longitude)
+                    tweet_data = Tweet(text,tweet['user']['screen_name'],user_profile.followers_count,tweet['created_at'],tweet['user']['location'],tweet['user']['description'],tweet['user']['verified'])
                     tweet_data.insertTweet()
+            
                 return True
                 
         except Exception as e:
@@ -120,13 +108,15 @@ if __name__ == '__main__':
     #Start listening
     l = TweetStreamListener()
     stream = tweepy.Stream(auth, l,tweet_mode='extended')
-     # logging is used for keeping track of the errors and warning that has occured
-    while True:
+    
+    # logging is used for keeping track of the errors and warning that has occured 
+    while not stream.running:
         try:
-            logging.info("Started listening to twitter stream...")
-            stream.filter(locations=[-180,-90,180,90],languages=["en"])            
+            logging.info("Started listening")
+             """The coordinates represents the north-eastern and south-western points. A bounding box is created enclosing the 
+             mentioned coordinates and all the tweets tweeted within the area enclosed by the bounding box would be filtered."""   
+            stream.filter(locations=[-180,-90,180,90],languages=["en"])         
         except(ProtocolError, AttributeError):
-            time.sleep(200)
             continue
         except(Timeout, SSLError, ReadTimeoutError, ConnectionError) as e:
             logging.warning("Network error occurred.", str(e))
@@ -134,4 +124,4 @@ if __name__ == '__main__':
             logging.error("Unexpected error.", e)
         finally:
             logging.info("Stream has crashed.")
-    logging.critical("Zombie has escaped...!")
+    logging.critical("Somehow zombie has escaped...!")
