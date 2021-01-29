@@ -1,7 +1,7 @@
 # Twitter-Project
 
 ## Introduction:
-This project is an attempt to collect, process, and analyze data on United States Elections 2020. My friend Vishnu Krishnan(https://github.com/Vishnukk33) and I decided to proceed with this project because we wanted to know how it feels to solve a real-world problem and perform everything from scratch including collecting and storing the data, creating and processing Datasets, and recording our observations. We felt undertaking this project, would increase our knowledge domain and motivate us to venture into new fields.    
+This project is an attempt to collect, process, and analyze data on United States Elections 2020. My friend Vishnu Krishnan (https://github.com/Vishnukk33) and I decided to proceed with this project because we wanted to know how it feels to solve a real-world problem and perform everything from scratch including collecting and storing the data, creating and processing Datasets, and recording our observations. We felt undertaking this project, would increase our knowledge domain and motivate us to venture into new fields.    
 
 ## Features:
 We have incorporated the following in our project:
@@ -9,7 +9,7 @@ We have incorporated the following in our project:
 2. Developing Machine Learning Classifiers to predict the political orientation of the tweet.
 3. Performing Sentiment Analysis on the collected data.
 4. Visualizing and analyzing the data with the help of bar graphs, pie charts, word-clouds, and maps. 
-5. Identifying Bots amongst most tweeted users. 
+5. Identifying Bots amongst the most tweeted users. 
 
 
 ## Dataset Creation:
