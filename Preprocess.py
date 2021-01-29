@@ -2,9 +2,9 @@
 
 import pandas as pd
 import nltk
+import re
 from nltk.corpus import stopwords
 from nltk.stem.porter import PorterStemmer
-import re
 
 pd.options.mode.chained_assignment = None
 nltk.download('stopwords')
