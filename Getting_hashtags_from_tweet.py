@@ -1,3 +1,5 @@
+# Code to extract Hashtags from Tweets.
+
 import pandas as pd
 import re
 
