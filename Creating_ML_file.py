@@ -10,7 +10,7 @@ for name in range(1,6):
     data=pd.read_csv('democ'+str(name)+'.csv')
     rows=len(data)
     index_set=set()
-    while len(index_set)<=3000:
+    while len(index_set)<3000:
         index=random.randint(0, rows-1)
         if index not in index_set:
             index_set.add(index)
