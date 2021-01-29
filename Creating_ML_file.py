@@ -1,3 +1,5 @@
+# Code to create the Dataset for Machine Learning by randomly selecting 3000 tweets from each of the ten Data-sets.
+
 import pandas as pd
 import numpy as np
 import random
