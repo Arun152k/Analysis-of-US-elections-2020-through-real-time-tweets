@@ -67,9 +67,11 @@ We have incorporated the following in our project:
 
 ### Our Dataset sneakpeek:
 
-We have collected 95,087 Pro-Democratic Tweets, 1,19,854 Pro-Republican Tweets and 20,750 Tweets for Sentiment Analysis.
-Thus in total, we have collected **2,35,691** tweets which we used in various stages of the Data Analysis.
-Further details of our Dataset is mentioned in "survey.txt"
+* We have collected 95,087 Pro-Democratic Tweets, 1,19,854 Pro-Republican Tweets and 20,750 Tweets for Sentiment Analysis.
+* Thus in total, we have collected **2,35,691** tweets which we used in various stages of the Data Analysis.
+* Further details of our Dataset is mentioned in "Survey.txt".
+* We have uploaded the complete Dataset in the Google Drive. The Link is given below:
+
 Dataset Link: https://drive.google.com/drive/folders/106wLxxQdNWpxwSZ7FbUWjbHr4uBeivSo?usp=sharing
 
 ## Machine Learning:
@@ -210,7 +212,7 @@ We performed sentiment analysis on a separate data-set as mentioned earlier and 
 <img src="https://github.com/Arun152k/Analysis-of-US-Elections-2020/blob/master/Graphs/Pie_Sentiment.png" width="500" height="400"  />
 
 
-To perform sentiment analysis we used the  Vader sentiment analysis API on the data-set. From the image, you can tell that almost 50% of the tweets are positive in nature. This suggests that almost half of the users have a positive outlook on the election results.
+To perform sentiment analysis we used the Vader sentiment analysis API on the data-set. From the image, you can tell that a little more than 50% of the tweets are positive in nature. This suggests that almost half of the users have a positive outlook/opinion on the election result.
 
 ### Mapploter
 We have plotted the republican and democratic geotagged tweets on two separate heatmaps. This allows us to visualize and identify the spread of the respective party supporters across the world. We have uploaded both the heatmaps on google drive (link below), please download the file and view it on your browser. 
