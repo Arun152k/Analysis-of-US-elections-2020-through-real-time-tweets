@@ -1,3 +1,0 @@
-We have uploaded all the Datasets which include democ1.csv, democ2.csv, democ3.csv, democ4.csv, democ5.csv, repub1.csv, repub2.csv, repub3.csv, repub4.csv, repub5.csv, sentiday1.csv, sentiday2.csv, sentiday3.csv, sentiday4.csv, a sample copy of "ML.csv", the .db file in which we stored the tweets named "realtimetweets.db". 
-
-Drive Link: https://drive.google.com/drive/folders/106wLxxQdNWpxwSZ7FbUWjbHr4uBeivSo?usp=sharing
