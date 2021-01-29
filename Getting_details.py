@@ -1,4 +1,4 @@
-# Getting the followers, their mentioned location and whether their account is verified, from the Twitter users.
+# Extracting the number of followers, the mentioned location and whether the account is verified, from the Twitter users.
 
 import numpy as np
 import pandas as pd
