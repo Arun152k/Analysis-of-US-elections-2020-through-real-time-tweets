@@ -1,8 +1,8 @@
 # To perform Sentiment analysis of the tweets using VADER sentiment analysis.
 
-from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 import pandas as pd
 import re
+from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 
 pd.options.mode.chained_assignment = None 
 analyser = SentimentIntensityAnalyzer()
