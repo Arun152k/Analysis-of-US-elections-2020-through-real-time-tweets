@@ -84,8 +84,13 @@ The entire visualization and analysis can be found in the ".ipynb" named 'Data_V
 Files and variables required for visualization were imported and declared in this section.
 Reading of the input data as well as the preprocessing( segregation, ordering,etc) for it were carried out here.
 
+## Data Visualization and Analysis:
+The entire visualization and analysis can be found in the file named 'Data_Visualization.ipynb'
+
+
 ### Visualization
 
+*Pictures speak a thousand words*
 
 <ol type="1">
   <li><h4>Average number of tweets tweeted per user in a day</h4></li>
@@ -93,27 +98,27 @@ Reading of the input data as well as the preprocessing( segregation, ordering,et
    <img src="https://github.com/Arun152k/Analysis-of-US-Elections-2020/blob/master/Graphs/Average.PNG" width="550" height="400"/>
   
   
-  The above results indicate that the average number of tweets per user is slightly higher among republic candidates than democratic candidates and the overall average comes  out to be 1.59 tweets per day.
+  The above results indicate that the average number of tweets per user is slightly higher among the republican supporters than the democratic supporters. The overall average comes out to be 1.59 tweets per day.
   <li><h4>Total no. of tweets tweeted per day</h4></li>
-    <img src="https://github.com/Arun152k/Analysis-of-US-Elections-2020/blob/master/Graphs/BarGraph_Demo1.png" width="450" height="400"/>          
+    <img src="https://github.com/Arun152k/Analysis-of-US-Elections-2020/blob/master/Graphs/BarGraph_Demo1.png" width="600" height="400"/>          
   
-   <img src="https://github.com/Arun152k/Analysis-of-US-Elections-2020/blob/master/Graphs/BarGraph_Rep1.png" width="450" height="400"/>
+   <img src="https://github.com/Arun152k/Analysis-of-US-Elections-2020/blob/master/Graphs/BarGraph_Rep1.png" width="600" height="400"/>
   
   From the Above graphs we can tell that the total number of republican and democratic supporting tweets are almost comparable during the 5 days that we collected them. 
   
   
   <li><h4>No. of unique users tweeted per day</h4></li>
-    <img src="https://github.com/Arun152k/Analysis-of-US-Elections-2020/blob/master/Graphs/BarGraph_Demo2.png" width="450" height="400"/>
-    <img src="https://github.com/Arun152k/Analysis-of-US-Elections-2020/blob/master/Graphs/BarGraph_Rep2.png" width="450" height="400"/>
+    <img src="https://github.com/Arun152k/Analysis-of-US-Elections-2020/blob/master/Graphs/BarGraph_Demo2.png" width="600" height="400"/>
+    <img src="https://github.com/Arun152k/Analysis-of-US-Elections-2020/blob/master/Graphs/BarGraph_Rep2.png" width="600" height="400"/>
     
   From the Above graphs we can tell that the total number of UNIQUE republican and democratic users are almost comparable during the 5 days that we collected them.
   
   
-  <li><h4>Follower distribution</h4></li>
+  <li><h4>Followers distribution</h4></li>
     <img src="https://github.com/Arun152k/Analysis-of-US-Elections-2020/blob/master/Graphs/BarGraph_Followers.png" width="600" height="400"  />
   
   
-  The Graph shows how many followers the republic and democratic users have by segregating them into classes. From the above, we can tell that on average republican accounts have more followers than democratic users since the numbers from the republic users are higher in every class. Ofcourse this is limited to only the users from whom we collected the tweets.
+  The Graph shows how many followers the republican and democratic users have by segregating them into classes(0-50,50-200,200-1000,1000 and above). For example if a user has 250 followers, he would be placed under the third class(200-1000). From the above, we can tell that on average republican accounts have more followers than democratic users since the numbers from the republic users are higher in every class. Ofcourse this is limited to only the users from whom we collected the tweets.
   
   
   <li><h4>Tweet count vs Originating State</h4></li>
@@ -121,56 +126,95 @@ Reading of the input data as well as the preprocessing( segregation, ordering,et
    
    <img src="https://github.com/Arun152k/Analysis-of-US-Elections-2020/blob/master/Graphs/Pie_DemoState.png" width="700" height="600"  />
     
-   The above Graphs indicate that California, Florida, New York, Texas and Illinois are the states from which majority of the Democratic Party tweets originate from in descending order. 
+   The above Graphs indicate that California, Florida, New York, Texas and Illinois are the states from which majority of the tweets supporting the Democratic Party originate ( in descending order). 
     
    <img src="https://github.com/Arun152k/Analysis-of-US-Elections-2020/blob/master/Graphs/BarGraph_RepTweetcount.png" width="700" height="500"  /> 
     
    <img src="https://github.com/Arun152k/Analysis-of-US-Elections-2020/blob/master/Graphs/Pie_RepState.png" width="700" height="600"  />
     
     
-   The above Graphs indicate that Texas, California, Florida, New York, and Illinois are the states from which majority of the Republic Party tweets originate from in descending order. 
-  <li><h4>Removed vs verified vs non-verfied</h4></li>
-  While checking the number of verified accounts we came across something interesting. Many of the accounts from which we had collected tweets earlier had been removed. This is evidence that many accounts which tweeted about the elections were actually fake bots that were designed to spread propaganda to potentially skew the election towards one of the candidates.                                                                                                                                                         
-  
-   <img src="https://github.com/Arun152k/Analysis-of-US-Elections-2020/blob/master/Graphs/Pie_Verified.png" width="400" height="400"  />
+   The above Graphs indicate that Texas, California, Florida, New York, and Illinois are the states from which majority of the tweets supporting the Republican Party originate(in descending order)
    
- These accounts according to some media could be used by different countries to sow discord during the election. From all the tweets we collected,  we found that over half of the twitter accounts that tweeted during these 5 days were in fact removed by the twitter team as they were suspected for being bots. This is an alarmingly large amount of accounts which was used to spread propaganda and fake opinions that could very well have impacted the voters and maybe even tipped the scale towards a certain party. 
-  Hopefully the twitter team continuous to remove such malicious fake accounts to prevent any bias towards or against a party due to the propaganda spread.
+  <li><h4>Removed vs verified vs non-verfied</h4></li>
+  While checking the number of verified accounts we came across something interesting. Many of the accounts from which we had collected tweets earlier were not available. This is because those accounts were either banned(by Twitter) or deactivated. This suggests that a good number of accounts which tweeted about the elections were actually fake bots that were designed to spread propaganda to potentially skew the election towards one of the candidates. These accounts according to some media-outlets may have been used by different countries to sow discord during the election.                                                                                                   
   
+
+This article here goes into more detail:       
+https://www.deccanherald.com/international/world-news-politics/twitter-bots-spread-disinformation-before-us-presidential-election-908932.html 
+
+https://www.nature.com/articles/d41586-020-03034-5
+
+
+
+   <img src="https://github.com/Arun152k/Analysis-of-US-Elections-2020/blob/master/Graphs/Pie_Verified.png" width="400" height="400"  />
 </ol>  
 
+
 ### Botometer API
-In order to check if the top most tweeted user's were bots or not, we used an API called Botometer. A
+In order to check if the top most tweeted user's were bots or not, we used an API called Botometer. After running the API on the top 2 tweeters of each of day totalling to 9 users(since one of the top tweeters were repeated) for republican and democratic supporters, we found the following:
 
 
-  <img src="https://github.com/Arun152k/Analysis-of-US-Elections-2020/blob/master/Graphs/TopDemoTweetsSS.PNG" width="600" height="400"  />
+  <img src="https://github.com/Arun152k/Analysis-of-US-Elections-2020/blob/master/Graphs/TopDemoTweetsSS.PNG" width="500" height="450"  />
   
   
- <img src="https://github.com/Arun152k/Analysis-of-US-Elections-2020/blob/master/Graphs/TopRepuTweetsSS.PNG" width="600" height="400"  />
+ <img src="https://github.com/Arun152k/Analysis-of-US-Elections-2020/blob/master/Graphs/TopRepuTweetsSS.PNG" width="500" height="450"  />
+
+
+The Accounts marked as unkown are either set to private or removed so we weren't be able to check if its a bot or not. Nevertheless,
+We had some interesting findings such as:
+* With a threshold of 60%, 10 out of 12 public users were found to be bots and with a threshold of 40% all of them were marked as bots.
+* One user made the top for both most number of democratic as well republican tweets. We can conlude that this was most likely some kind of spam bot.
+* Some users consistently maintained the most number of tweets for more than a day also showing us that these where extremely active accounts and may have also been spam bots.
 
 ### Top Hashtags
+The images below show the top 10 most popular hashtags in the tweets that we collected in the democratic and republican data-sets respectively:
 
-  <img src="https://github.com/Arun152k/Analysis-of-US-Elections-2020/blob/master/Graphs/TopDemoHashSS.PNG" width="500" height="400"  />
+  <img src="https://github.com/Arun152k/Analysis-of-US-Elections-2020/blob/master/Graphs/TopdemoHashSS.PNG" width="500" height="400"  />
   
- <img src="https://github.com/Arun152k/Analysis-of-US-Elections-2020/blob/master/Graphs/TopRepuHashSS.PNG" width="500" height="400"  />
+ <img src="https://github.com/Arun152k/Analysis-of-US-Elections-2020/blob/master/Graphs/ToprepHashSS.PNG" width="500" height="400"  />
 
+From the above images we can infer that Trump2020 was the most popular tweet with a whopping 47k tweets followed by BidenHarris2020 at 41k.
 
 ### Word Clouds
-#### List of Most popular hastags as a word cloud  
+#### *List of Most popular hashtags as a word cloud  
 
+We have represented the most popular hashtags as word clouds since it is more appealing and serves as a better illustration.
 
 <img src="https://github.com/Arun152k/Analysis-of-US-Elections-2020/blob/master/Graphs/wordcloud_dem_hash.jpg" width="500" height="400"  />
 
 <img src="https://github.com/Arun152k/Analysis-of-US-Elections-2020/blob/master/Graphs/wordcloud_rep_hash.jpg" width="500" height="400"  />
 
 
-#### Most popular words used in tweets as a world cloud
+#### *Most popular words used in tweets as a world cloud
 
-
+We have represented the most frequently occurring words in the tweets as word clouds as well.
 <img src="https://github.com/Arun152k/Analysis-of-US-Elections-2020/blob/master/Graphs/wordcloud_dem_tweet.jpg" width="500" height="400"  />
 
 <img src="https://github.com/Arun152k/Analysis-of-US-Elections-2020/blob/master/Graphs/wordcloud_rep_tweet.jpg" width="500" height="400"  />
 
 ### Sentiment Analysis
 
+We performed sentiment analysis on a separate data-set as mentioned earlier and the results obtained is shown below.
+
 <img src="https://github.com/Arun152k/Analysis-of-US-Elections-2020/blob/master/Graphs/Pie_Sentiment.png" width="500" height="400"  />
+
+To perform sentiment analysis we used the  Vader sentiment analysis API on the data-set. From the image you can tell that almost 50% of the tweets are positive in nature. This suggests that almost half of the users have a positive outlook on the elections results.
+
+### Mapploter
+We have plotted the republican and democratic geo-tagged tweets on two separate heatmaps. This allows us to visualize and identify the spread of the respective party supporters accross the world. We have uploaded both the heatmaps on google drive (link below), please download the file and view it on your browser. 
+
+Drive link: https://drive.google.com/drive/folders/11V0DFpFqWhZsMPT1Th_3sMnfH5peRL4q?usp=sharing
+
+The following analysis can be made from viewing the plotted Heatmaps:
+1. We could see from both the Heatmaps that a much larger number of users tweet from the North-Eastern and South-Western regions of the country than compared to the other regions of the country. This could be because of the fact these regions are more densely populated and technologically well developed. 
+
+2. The Democratic Heatmap has a much stronger shade in the North-Eastern regions and the state of Washington where Joe Biden won the electoral votes, while the Republican Heatmaps show a comparitively darker shade in the Central states and the state of Florida where Donald Trump won the ectoral votes (Although there are certain anamolies seen in the Heatmaps while comparing it to the Electoral College maps).     
+
+## Conclusion
+It took a lot of time and effort from our ourside to complete this comprehensive project. Though it has been an arduous journey, we are satisfied with the outcome of our project. We have gained a tremendous amount of knowledge and explored various fields. If you have any comments or queries please rach out to us at: rarunkumar15112k@gmail.com, vishnukamk@gmail.com.
+
+
+### Note:
+* The collected tweets/data is publicly available and have been tweeted by public twitter handles. These tweets/data were collected and uploaded only for strict academic purposes.  
+* We have used the terms republican and democratic as synonyms for users who tend to be politically oriented towards the republican and democratic party respectively.
+* The aim of this project was not to predict the results of the elections, but to analyse the tweets and its meta data related to The United States Elections 2020.
