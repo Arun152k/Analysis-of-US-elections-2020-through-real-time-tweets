@@ -169,7 +169,8 @@ We had some interesting findings such as:
 ### Top Hashtags
 The images below show the top 10 most popular hashtags in the tweets that we collected in the democratic and republican data-sets respectively:
 
-  <img src="https://github.com/Arun152k/Analysis-of-US-Elections-2020/blob/master/Graphs/TopdemoHashSS.PNG" width="500" height="400"  />
+ 
+ <img src="https://github.com/Arun152k/Analysis-of-US-Elections-2020/blob/master/Graphs/TopdemoHashSS.PNG" width="500" height="400"  />
   
  <img src="https://github.com/Arun152k/Analysis-of-US-Elections-2020/blob/master/Graphs/ToprepHashSS.PNG" width="500" height="400"  />
 
@@ -180,7 +181,10 @@ From the above images we can infer that Trump2020 was the most popular tweet wit
 
 We have represented the most popular hashtags as word clouds since it is more appealing and serves as a better illustration.
 
+
+
 <img src="https://github.com/Arun152k/Analysis-of-US-Elections-2020/blob/master/Graphs/wordcloud_dem_hash.jpg" width="500" height="400"  />
+
 
 <img src="https://github.com/Arun152k/Analysis-of-US-Elections-2020/blob/master/Graphs/wordcloud_rep_hash.jpg" width="500" height="400"  />
 
@@ -188,7 +192,11 @@ We have represented the most popular hashtags as word clouds since it is more ap
 #### *Most popular words used in tweets as a world cloud
 
 We have represented the most frequently occurring words in the tweets as word clouds as well.
+
+
+
 <img src="https://github.com/Arun152k/Analysis-of-US-Elections-2020/blob/master/Graphs/wordcloud_dem_tweet.jpg" width="500" height="400"  />
+
 
 <img src="https://github.com/Arun152k/Analysis-of-US-Elections-2020/blob/master/Graphs/wordcloud_rep_tweet.jpg" width="500" height="400"  />
 
@@ -196,7 +204,9 @@ We have represented the most frequently occurring words in the tweets as word cl
 
 We performed sentiment analysis on a separate data-set as mentioned earlier and the results obtained is shown below.
 
+
 <img src="https://github.com/Arun152k/Analysis-of-US-Elections-2020/blob/master/Graphs/Pie_Sentiment.png" width="500" height="400"  />
+
 
 To perform sentiment analysis we used the  Vader sentiment analysis API on the data-set. From the image you can tell that almost 50% of the tweets are positive in nature. This suggests that almost half of the users have a positive outlook on the elections results.
 
