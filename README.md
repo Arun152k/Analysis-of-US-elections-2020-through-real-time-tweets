@@ -1,7 +1,7 @@
 # Twitter-Project
 
 ## Introduction:
-This project is an attempt to collect, process, and analyze data on United States Elections 2020. My friend Vishnu Krishnan(https://github.com/Vishnukk33) and I decided to proceed with this project because we wanted to know how it feels to solve a real-world problem where we need to do everything from scratch including collecting data, creating and processing data-sets, and recording our observations. We felt undertaking this project, would increase our knowledge domain and motivate us to venture into new fields.    
+This project is an attempt to collect, process, and analyze data on United States Elections 2020. My friend Vishnu Krishnan(https://github.com/Vishnukk33) and I decided to proceed with this project because we wanted to know how it feels to solve a real-world problem and perform everything from scratch including collecting and storing the data, creating and processing Datasets, and recording our observations. We felt undertaking this project, would increase our knowledge domain and motivate us to venture into new fields.    
 
 ## Features:
 We have incorporated the following in our project:
