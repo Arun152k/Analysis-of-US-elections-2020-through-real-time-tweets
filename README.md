@@ -65,6 +65,38 @@ We have incorporated the following in our project:
 * "Getting_hashtags_from_tweet.py" was run on these above-mentioned datasets in order to extract the additional datasets tagged by the users in their tweets.
 * The Data visualization, analysis, and Machine Learning based predictions were all performed using these .csv files.
 
+Our Dataset sneakpeek:
+
+**Pro-Democratic Tweets**
+	       Total 	 State(Avl.)	 Lat/Long(Avl.)	  Banned/Suspended/Deactivated Acc.		 Verified Acc. 
+DAY1	   16694   416	         14		             11473					                          40	
+DAY2	   14932   344	         14		             7590					                           42
+DAY3	   25204  	557	         21		             12673					                          80
+DAY4	   22497	  551	         18		             11478	                     				     76
+DAY5	   15760	  345         	21	             	6148					                           68
+
+**Pro-Republican Tweets**
+	       Total 	 State(Avl.)	 Lat/Long(Avl.)	  	Banned/Suspended/Deactivated Acc.		Verified Acc.
+DAY1	   19238	  301	         7		               12476					                         11	
+DAY2	   17929	  235	         4		               8721					                          30
+DAY3	   26444	  386         	8		               14711					                         43
+DAY4	   33585	  504	         9		               17853					                         35
+DAY5	   22658	  316	         6		               10812					                         98
+
+**Sentiment Tweets**
+		      Total  Positive	    Negative 	 Neutral	
+DAY1	   12329 	6537	        2583	      3229
+DAY2	   5494	  2775	        1242	      1477
+DAY3	   1244	  538	         395	       311
+DAY4	   1683	  737	         508	       438
+
+Where,
+Avl. - Available
+Acc. - Accounts
+
+We have collected 95,087 Pro-Democratic Tweets, 1,19,854 Pro-Republican Tweets and 20,750 Tweets for Sentiment Analysis.
+Thus in total, we have collected **2,35,691** tweets which we used in various stages of the Data Analysis.
+
 Dataset Link: https://drive.google.com/drive/folders/106wLxxQdNWpxwSZ7FbUWjbHr4uBeivSo?usp=sharing
 
 ## Machine Learning:
@@ -228,3 +260,26 @@ It took a lot of time and effort from our side to complete this comprehensive pr
 * The aim of this project was not to predict the results of the elections but to analyze the tweets and their metadata related to The United States Elections 2020.
 * We have used only "Filter_by_hashtags.py" to collect the data. We have uploaded "Filter_by_locations.py" and "Filter_by_users.py" as an additional reference.
 
+Our Dataset sneakpeek:
+Democratic Tweets
+	       Total 	 State(Avl.)	 Lat/Long(Avl.)	  Banned/Suspended/Deactivated		 Verified 
+DAY1	   16694   416	         14		             11473					                     40	
+DAY2	   14932   344	         14		             7590					                      42
+DAY3	   25204  	557	         21		             12673					                     80
+DAY4	   22497	  551	         18		             11478	                     				76
+DAY5	   15760	  345         	21	             	6148					                      68
+
+Republican Tweets
+	       Total 	 State(Avl.)	 Lat/Long(Avl.)	  	Banned/Suspended/Deactivated		Verified 
+DAY1	   19238	  301	         7		               12476					                    11	
+DAY2	   17929	  235	         4		               8721					                     30
+DAY3	   26444	  386         	8		               14711					                    43
+DAY4	   33585	  504	         9		               17853					                    35
+DAY5	   22658	  316	         6		               10812					                    98
+
+Sentiment Tweets
+		      Total  Positive	    Negative 	 Neutral	
+DAY1	   12329 	6537	        2583	      3229
+DAY2	   5494	  2775	        1242	      1477
+DAY3	   1244	  538	         395	       311
+DAY4	   1683	  737	         508	       438
