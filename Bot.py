@@ -6,10 +6,10 @@ import tweepy
 from beautifultable import BeautifulTable
 global api
 
-consumer_key="insert consumer key"
-consumer_secret="insert consumer secret key"
-access_token="insert access token"
-access_token_secret="insert access token secret"
+consumer_key="insert_consumer_key"
+consumer_secret="insert_consumer_secret_key"
+access_token="insert_access_token"
+access_token_secret="insert_access_token_secret"
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
 api = tweepy.API(auth)
