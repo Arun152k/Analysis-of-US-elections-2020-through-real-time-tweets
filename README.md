@@ -225,6 +225,8 @@ It took a lot of time and effort from our ourside to complete this comprehensive
 
 
 ### Note:
-* The collected tweets/data is publicly available and have been tweeted by public twitter handles. These tweets/data were collected and uploaded only for strict academic purposes.  
+* The collected tweets/data is publicly available and have been tweeted by public twitter handles (atleast at the time of data collection). These tweets/data were collected and uploaded only for strict academic purposes.  
 * We have used the terms republican and democratic as synonyms for users who tend to be politically oriented towards the republican and democratic party respectively.
 * The aim of this project was not to predict the results of the elections, but to analyse the tweets and its meta data related to The United States Elections 2020.
+* We have used only "Filter_by_hashtags.py" to collect the data. We have uploaded "Filter_by_locations.py" and "Filter_by_users.py" as additional reference.
+
