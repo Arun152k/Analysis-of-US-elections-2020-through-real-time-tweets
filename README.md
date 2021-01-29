@@ -73,6 +73,7 @@ We have incorporated the following in our project:
 * We have uploaded the complete Dataset in the Google Drive. The Link is given below:
 
 Dataset Link: https://drive.google.com/drive/folders/106wLxxQdNWpxwSZ7FbUWjbHr4uBeivSo?usp=sharing
+* The Dataset is uploaded as a directory as well (named Data-Sets).
 
 ## Machine Learning:
 * The goal was to predict the political orientation of the tweets using Machine Learning Algorithms.
