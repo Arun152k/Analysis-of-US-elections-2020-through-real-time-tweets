@@ -11,6 +11,7 @@ We have incorporated the following in our project:
 4. Visualizing and analyzing the data with the help of bar graphs, pie charts, word-clouds, and maps. 
 5. Identifying Bots amongst most tweeted users. 
 
+
 ## Dataset Creation:
 
 ### Data Collection:
@@ -64,6 +65,8 @@ We have incorporated the following in our project:
 * "Getting_hashtags_from_tweet.py" was run on these above-mentioned datasets in order to extract the additional datasets tagged by the users in their tweets.
 * The Data visualization, analysis, and Machine Learning based predictions were all performed using these .csv files.
 
+Dataset Link: https://drive.google.com/drive/folders/106wLxxQdNWpxwSZ7FbUWjbHr4uBeivSo?usp=sharing
+
 ## Machine Learning:
 * The goal was to predict the political orientation of the tweets using Machine Learning Algorithms.
 * The dataset "ML.csv" was created by running "Creating_ML_File.py" on the democ(1..5).csv and repub(1..5).csv.
@@ -72,18 +75,15 @@ We have incorporated the following in our project:
 * "ML.csv" is preprocessed so as to make it suitable to feed into Machine Learning Algorithms. The preprocessing is done by "Preprocess.py".
 * The processed dataset, is used by "ML_prediction.py" to predict the political orientation of the tweets. 
 * "ML_prediction.py" uses standard Machine Learning Algorithms to predict the political orientation of the tweets as well as attempts to use a Stack Based Voting Algorithm.
-* ".ipynb" file contains the entire sequence in a single file. The accuracy obtained through each algorithm is mentioned in this file. 
+* "ML_code.ipynb" file contains the entire sequence in a single file. The accuracy obtained through each algorithm is mentioned in this file. 
 
 
 ## Data Visualization and Analysis:
-The entire visualization and analysis can be found in the ".ipynb" named 'Data_Visualization.ipynb'
+The entire visualization and analysis can be found in 'Data_Visualization.ipynb'
+
 ### Initialization and Preprocessing
 Files and variables required for visualization were imported and declared in this section.
-Reading of the input data as well as the preprocessing( segregation, ordering, etc) for it was carried out here.
-
-## Data Visualization and Analysis:
-The entire visualization and analysis can be found in the file named 'Data_Visualization.ipynb'
-
+Reading of the input data as well as the preprocessing(segregation, ordering, etc) for it was carried out here.
 
 ### Visualization
 
@@ -223,8 +223,8 @@ It took a lot of time and effort to complete this comprehensive project. Though 
 
 ### Note:
 * The collected tweets/data is publicly available and have been tweeted by public Twitter handles (at least at the time of data collection). These tweets/data were collected, used, and uploaded strictly for academic purposes.  
+* We have uploaded the Datasets, heatmaps, a sample "ML.csv" file, and the .db file which we used to collect the tweets in the Google Drive. We have mentioned the Google Drive link in the text files("Datasets.txt" and "Heatmaps.txt") present in the "Files" Directory. The Drive link mentioned in "Datasets.txt" contains all the Datasets, a sample "ML.csv" file, and the .db file which we used to collect the tweets. The Drive link mentioned in "Heatmaps.txt" contains the democratic and republican Heatmaps.
 * We have used the terms republican and democratic as synonyms for users who tend to be politically oriented towards the republican and democratic party respectively.
 * The aim of this project was not to predict the results of the elections but to analyze the tweets and their metadata related to The United States Elections 2020.
 * We have used only "Filter_by_hashtags.py" to collect the data. We have uploaded "Filter_by_locations.py" and "Filter_by_users.py" as an additional reference.
-
 
