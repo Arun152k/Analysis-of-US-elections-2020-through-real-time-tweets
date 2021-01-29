@@ -87,7 +87,7 @@ Reading of the input data as well as the preprocessing(segregation, ordering, et
 
 ### Visualization
 
-*Pictures speak a thousand words*
+*A Picture speaks a thousand words*
 
 <ol type="1">
   <li><h4>Average number of tweets tweeted per user in a day</h4></li>
@@ -115,7 +115,7 @@ Reading of the input data as well as the preprocessing(segregation, ordering, et
     <img src="https://github.com/Arun152k/Analysis-of-US-Elections-2020/blob/master/Graphs/BarGraph_Followers.png" width="600" height="400"  />
   
   
-  The Graph shows how many followers the republican and democratic users have by segregating them into classes(0-50,50-200,200-1000,1000 and above). For example, if a user has 250 followers, he would be placed under the third class(200-1000). From the above, we can tell that on average republican accounts have more followers than democratic users since the numbers from the republic users are higher in every class. And most of the pro-democratic and pro-republican supporters have only 0-50 followers. Of course, this is limited to only the users from whom we collected the tweets.
+  The Graph shows how many followers the republican and democratic users have by segregating them into classes(0-50,50-200,200-1000,1000 and above). For example, if a user has 250 followers, he would be placed under the third class(200-1000). From the above, we can tell that most of the pro-democratic and pro-republican supporters have only 0-50 followers. Of course, this is limited to only the users from whom we collected the tweets.
   
   
   <li><h4>Tweet count vs Originating State</h4></li>
@@ -133,7 +133,7 @@ Reading of the input data as well as the preprocessing(segregation, ordering, et
    The above Graphs indicate that Texas, California, Florida, New York, and Illinois are the states from which the majority of the tweets supporting the Republican Party originate(in descending order)
    
   <li><h4>Removed vs verified vs non-verfied</h4></li>
-  While checking the number of verified accounts we came across something interesting. Many of the accounts from which we had collected tweets earlier were not available. This is because those accounts were either banned(by Twitter) or deactivated. This suggests that a good number of accounts that tweeted about the elections were actually fake bots that were designed to spread propaganda to potentially skew the election towards one of the candidates. These accounts according to some media-outlets may have been used by different countries to sow discord during the election.                                                                                                   
+  While checking the number of verified accounts we came across something interesting. Many of the accounts from which we had collected tweets earlier were not available. This is because those accounts were either suspended or banned(by Twitter) or deactivated. This suggests that a good number of accounts that tweeted about the elections were actually fake bots that were designed to spread propaganda to potentially skew the election towards one of the candidates. These accounts according to some media-outlets may have been used by different countries to sow discord during the election.                                                                                                   
   
 
 This article here goes into more detail:       
@@ -213,12 +213,12 @@ We have plotted the republican and democratic geotagged tweets on two separate h
 Drive link: https://drive.google.com/drive/folders/11V0DFpFqWhZsMPT1Th_3sMnfH5peRL4q?usp=sharing
 
 The following analysis can be made from viewing the plotted Heatmaps:
-1. We could see from both the Heatmaps that a much larger number of users tweet from the North-Eastern and South-Western regions of the country than compared to the other regions of the country. This could be because of the fact these regions are more densely populated and technologically well developed. 
+1. We could see from both the Heatmaps that a much larger number of users tweet from the North-Eastern and South-Western regions of the country than compared to the other regions of the country. This could be because of the fact these regions are more densely populated and digitally more active and well connected. 
 
 2. The Democratic Heatmap has a much stronger shade in the North-Eastern regions and the state of Washington where Joe Biden won the electoral votes, while the Republican Heatmaps show a comparatively darker shade in the Central states and the state of Florida where Donald Trump won the electoral votes (Although there are certain anomalies seen in the Heatmaps while comparing it to the Electoral College maps).     
 
 ## Conclusion
-It took a lot of time and effort to complete this comprehensive project. Though it has been an arduous journey, we are satisfied with the outcome of our project. We have gained a tremendous amount of knowledge and explored various fields. If you have any comments or queries please reach out to us at rarunkumar15112k@gmail.com, vishnukamk@gmail.com.
+It took a lot of time and effort from our side to complete this comprehensive project. Though it has been an arduous journey, we are satisfied with the outcome of our project. We have gained a tremendous amount of knowledge and explored various fields. If you have any comments or queries or suggestions please reach out to us at rarunkumar15112k@gmail.com, vishnukamk@gmail.com.
 
 
 ### Note:
