@@ -8,7 +8,6 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from nltk.corpus import stopwords
 from nltk.stem.porter import PorterStemmer
 from sklearn.metrics import accuracy_score 
-from sklearn.datasets import load_iris
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
 from sklearn.neighbors import KNeighborsClassifier
